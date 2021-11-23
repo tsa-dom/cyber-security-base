@@ -1,0 +1,17 @@
+doctype html 
+
+html(lang="en")
+  head
+    title= Login
+  body
+    h1 Login
+    form(action="/", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'main', type="submit") Main
+    form(method='post' action='/login')
+      input(type="hidden", name="_csrf", value=_csrf)
+      div Username
+      input(type="text", name="username") 
+      div Password
+      input(type="password", name="password")
+      input(type="submit", name="login", value="Log in")

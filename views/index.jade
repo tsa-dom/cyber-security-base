@@ -1,0 +1,36 @@
+doctype html 
+
+html(lang="en")
+  head
+    title= Main
+  body
+    h1 Main
+    form(action="/login", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'login', type="submit") Log in 
+    form(action="/todos", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'todo', type="submit") Todos
+    form(action="/user/#{user}", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'password', type="submit") Change password
+    form(action="/logout", method="post")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'logout', type="submit") Log out
+  script.
+    const getCookie = (name) => {
+      let cookies = {}
+      document.cookie.split(';').forEach((cookie) => {
+        let [key, value] = cookie.split('=')
+        cookies[key.trim()] = value
+      })
+      return cookies[name]
+    }
+
+    if (getCookie('token')) {
+      document.getElementById('login').remove()
+    } else {
+      document.getElementById('todo').remove()
+      document.getElementById('password').remove()
+      document.getElementById('logout').remove()
+    }

@@ -1,0 +1,21 @@
+doctype html 
+
+html(lang="en")
+  head
+    title= Main
+  body
+    h1 Todos 
+    form(action="/", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'main', type="submit") Main
+    form(action="/logout", method="post")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'logout', type="submit") Log out
+    form(action="/todos", method="post")
+      input(type="hidden", name="_csrf", value=_csrf)
+      input(type="text", name="todo")
+      button(id = 'login', type="submit") Create Todo
+    ul 
+      each todo in todos 
+        li
+          a(href="/todos/" + todo)= todo
