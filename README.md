@@ -26,4 +26,4 @@ or
 
       npm start
       
-Now the app should be running in the port 8000.
+Now the app should be running on port 8000.
