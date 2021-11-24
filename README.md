@@ -8,7 +8,7 @@ To run this application you should have node installed. You can install node fro
 
 Once you have node installed you can verify it by using command ```node -v```. You can also verify that you have npm with command ```npm -v```.
 
-## Installing dependencies
+## Running the application
 
 At first you should clone this repository
       
@@ -25,3 +25,5 @@ You can start the application in one of the following commands
 or
 
       npm start
+      
+Now the app should be running in the port 8000.
