@@ -18,7 +18,7 @@ Go to the root of the project and install dependencies
 
       npm install
 
-You can start the application in one of the following commands
+You can start the application with the one of the following commands
 
       npm run dev
 
