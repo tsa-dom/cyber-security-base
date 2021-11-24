@@ -1,0 +1,17 @@
+doctype html 
+
+html(lang="en")
+  head
+    title= Signup
+  body
+    h1 Sign up
+    form(action="/", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'main', type="submit") Main
+    form(method='post' action='/signup')
+      input(type="hidden", name="_csrf", value=_csrf)
+      div Username
+      input(type="text", name="username") 
+      div Password
+      input(type="password", name="password")
+      input(type="submit", name="signup", value="Sign up")

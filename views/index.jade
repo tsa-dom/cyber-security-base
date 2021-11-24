@@ -7,7 +7,10 @@ html(lang="en")
     h1 Main
     form(action="/login", method="get")
       input(type="hidden", name="_csrf", value=_csrf)
-      button(id = 'login', type="submit") Log in 
+      button(id = 'login', type="submit") Log in
+    form(action="/signup", method="get")
+      input(type="hidden", name="_csrf", value=_csrf)
+      button(id = 'signup', type="submit") Sign up
     form(action="/todos", method="get")
       input(type="hidden", name="_csrf", value=_csrf)
       button(id = 'todo', type="submit") Todos
@@ -29,6 +32,7 @@ html(lang="en")
 
     if (getCookie('token')) {
       document.getElementById('login').remove()
+      document.getElementById('signup').remove()
     } else {
       document.getElementById('todo').remove()
       document.getElementById('password').remove()

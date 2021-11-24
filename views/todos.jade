@@ -17,5 +17,4 @@ html(lang="en")
       button(id = 'login', type="submit") Create Todo
     ul 
       each todo in todos 
-        li
-          a(href="/todos/" + todo)= todo
+        li #{todo}
